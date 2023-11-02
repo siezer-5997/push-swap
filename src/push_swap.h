@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/02 18:39:22 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:09:26 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_stack
 // arguments and parsing them into numbers to be added to stack a
 t_stack	*ft_conversion_stack(int argc, char **argv);
 t_stack	*ft_sub_conversiton(char **argv);
+t_stack	*ft_add_conversion(int argc, char **argv, t_stack *a, int i);
 
 // push_swap stack manupulation functions
 t_stack	*ft_new_stack(long num);
