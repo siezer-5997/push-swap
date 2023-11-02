@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 22:25:55 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/02 00:58:55 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/02 21:49:48 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,21 @@ t_stack	*ft_last_stack(t_stack *stack)
 	return (stack);
 }
 
-void	ft_add_back(t_stack **stack, t_stack *new_stack)
+void	ft_add_back(t_stack **stack, t_stack *new_node, int *index)
 {
 	if (!stack)
 		return ;
 	if (!(*stack))
-		*stack = new_stack;
+	{
+		*stack = new_node;
+		(*stack)->index = *index;
+	}
 	else
-		(ft_last_stack(*stack))->next = new_stack;
+	{
+		(ft_last_stack(*stack))->next = new_node;
+		(ft_last_stack(*stack))->index = *index;
+	}
+	(*index)++;
 }
 
 int	ft_my_atoi(const char *str)
