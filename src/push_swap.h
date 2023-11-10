@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/02 21:39:52 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:27:30 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <limits.h>
 # include "../Libft/libft.h"
 
 // the structure used to define a stack in m program
@@ -31,7 +32,7 @@ typedef struct s_stack
 
 // Two main functions which are processing the recieved 
 // arguments and parsing them into numbers to be added to stack a
-t_stack	*ft_conversion_stack(int argc, char **argv);
+int	*ft_conversion_stack(int argc, char **argv);
 
 // push_swap stack manupulation functions
 t_stack	*ft_new_stack(long num);
@@ -40,9 +41,10 @@ void	ft_add_back(t_stack **stack, t_stack *new_node, int *index);
 int		ft_my_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+char	*my_ft_strjoin(char *my_stash, char *buffer);
 
 // additional functions in utensils to deal with stacks and errors
-void	ft_error(void);
+void	ft_error(char *str);
 int		ft_isdigit(int c);
 
 #endif

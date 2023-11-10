@@ -6,14 +6,22 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:59:11 by sizerese          #+#    #+#             */
-/*   Updated: 2023/10/27 22:05:22 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/10 22:57:53 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(void)
+void	ft_error(char *str)
 {
-	write(1, "Error\n", 6);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	write(1, "\n", 2);
 	exit(1);
 }

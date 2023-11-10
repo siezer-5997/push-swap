@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/09 20:35:51 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:28:26 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,23 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
+	// t_stack	*a;
 	int		index;
+	int		*result;
+	int		i;
 
 	index = 0;
-	a = ft_conversion_stack(argc, argv);
-	printf("%s\n", "hello back here again to main: ");
-	while (a)
+	result = ft_conversion_stack(argc, argv);
+	i = 0;
+	for (int i=0; i < 10; i++)
 	{
-		printf("Inside stack: Index[%ld]: %ld\n", a->index, a->nbr);
-		a = a->next;
+		printf("Number [%d]: %d\n", i, result[i]);
 	}
+	// while (a)
+	// {
+	// 	printf("Inside stack: Index[%ld]: %ld\n", a->index, a->nbr);
+	// 	a = a->next;
+	// }
 	return (0);
 }
 

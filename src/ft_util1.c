@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 22:25:55 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/02 21:49:48 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/10 22:57:26 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ int	ft_my_atoi(const char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_error();
+			ft_error("not a digit!");
 		result = result * 10 + (*str - 48);
 		str++;
 	}
 	if ((result * sign) > 2147483647 || (result * sign) < -2147483648)
-		ft_error();
+		ft_error("int overloaded!");
 	return (result * sign);
 }
