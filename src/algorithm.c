@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:16:44 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/14 23:18:35 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/15 21:14:42 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	*ft_parse(char *str, int *size)
 	tmp = ft_split(str, 32);
 	*(size) = ft_find_size(tmp);
 	nums = malloc(*(size) * sizeof(int));
-	//printf("size: %d\n", *size);
 	i = 0;
 	while (i < *size)
 	{
@@ -49,13 +48,10 @@ int	*ft_parse(char *str, int *size)
 
 t_stack	*ft_add_2stack(t_stack *a, int *result, int *index, int size)
 {
-	int		i;
-
-	i = 0;
-	while (i < size)
+	while (size)
 	{
-		ft_add_back(&a, ft_new_stack(result[i]), index);
-		i++;
+		ft_add_back(&a, ft_new_stack(result[size - 1]), index);
+		size--;
 	}
 	return (a);
 }
@@ -78,8 +74,7 @@ t_stack	*ft_conversion_stack(int argc, char **argv, int *index)
 	{
 		while (i < argc)
 		{
-			ptr = my_ft_strjoin(ptr, argv[i]);
-			i++;
+			ptr = my_ft_strjoin(ptr, argv[i++]);
 		}
 	}
 	else

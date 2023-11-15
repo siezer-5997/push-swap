@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:14:41 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/10 20:29:27 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/15 21:01:40 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	dest[i] = '\0';
 	return (res);
 }
-

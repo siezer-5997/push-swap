@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/14 23:06:56 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/16 00:21:06 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_stack
 // Main function which is processing the recieved 
 // arguments and parsing them into numbers to be added to stack a
 t_stack	*ft_conversion_stack(int argc, char **argv, int *index);
+t_stack	*ft_assign_index(t_stack *a);
+void	ft_in(t_stack **a);
 
 // push_swap stack manupulation functions
 t_stack	*ft_new_stack(long num);
@@ -42,6 +44,11 @@ int		ft_my_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 char	*my_ft_strjoin(char *my_stash, char *buffer);
+
+// Instructions funcitons 
+void	swap_a(t_stack **a);
+void	swap_b(t_stack **b);
+void	swap_ab(t_stack **a, t_stack **b);
 
 // additional functions in utensils to deal with stacks and errors
 void	ft_error(char *str);
