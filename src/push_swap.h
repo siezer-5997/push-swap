@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/18 16:12:14 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/18 18:09:44 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ void	swap_b(t_stack **b);
 void	swap_ab(t_stack **a, t_stack **b);
 void	push_a(t_stack **a, t_stack **b);
 void	push_b(t_stack **a, t_stack **b);
+void	rt_a(t_stack **a);
+void	rt_b(t_stack **b);
+void	rt_ab(t_stack **a, t_stack **b);
 
 // additional functions in utensils to deal with stacks and errors
 void	ft_error(char *str);
