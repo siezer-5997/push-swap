@@ -6,35 +6,28 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/16 00:30:54 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:13:55 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_whatwhat(t_stack *a)
-{
-	t_stack	*tmp;
-
-	tmp = a;
-	while (tmp)
-	{
-		printf("1st: Index[%ld]: %ld\n", tmp->index, tmp->nbr);
-		tmp = tmp->next;
-	}
-	printf("\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
+	t_stack	*b = NULL;
 	int		index;
 
 	index = 0;
 	a = ft_conversion_stack(argc, argv, &index);
-	ft_whatwhat(a);
-	printf("After swapping:\n");
-	ft_whatwhat(a);
+	b = ft_create_sum();
+	printf("first a & b:\n");
+	ft_display_stack(a);
+	ft_display_stack(b);
+	push_a(&a, &b);
+	printf("Next:\n");
+	ft_display_stack(a);
+	ft_display_stack(b);
 	return (0);
 }
 

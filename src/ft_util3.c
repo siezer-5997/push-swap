@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:53:48 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/16 00:09:02 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:10:51 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,36 @@ void	ft_in(t_stack **a)
 		(*a) = (*a)->next;
 	}
 	(*a) = tmp;
+}
+
+t_stack	*ft_create_sum(void)
+{
+	t_stack	*new;
+	t_stack	*b;
+
+	b = ft_new_stack(7);
+	b->next = NULL;
+	new = ft_new_stack(8);
+	new->next = NULL;
+	b->next = new;
+	new = ft_new_stack(9);
+	new->next = NULL;
+	b->next->next = new;
+	b = ft_assign_index(b);
+	return (b);
+}
+
+void	ft_display_stack(t_stack *a)
+{
+	t_stack	*tmp;
+
+	tmp = a;
+	if (!tmp)
+		printf("No node");
+	while (tmp)
+	{
+		printf("1st: Index[%ld]: %ld\n", tmp->index, tmp->nbr);
+		tmp = tmp->next;
+	}
+	printf("\n");
 }

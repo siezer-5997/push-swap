@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:12:00 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/16 00:53:56 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:08:32 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	swap_a(t_stack **a)
 	(*a) = (*a)->next;
 	(*a)->next = tmp;
 	(*a)->next->next = tmp_next;
+	ft_in(a);
 }
 
 void	swap_b(t_stack **b)
@@ -38,6 +39,7 @@ void	swap_b(t_stack **b)
 	(*b) = (*b)->next;
 	(*b)->next = tmp;
 	(*b)->next->next = tmp_next;
+	(*b) = ft_assign_index((*b));
 }
 
 void	swap_ab(t_stack **a, t_stack **b)
@@ -46,7 +48,34 @@ void	swap_ab(t_stack **a, t_stack **b)
 	swap_b(b);
 }
 
-// void	ra(t_stack *a)
-// {
-	
-// }
+void	push_a(t_stack **a, t_stack **b)
+{
+	t_stack	*tmp_b;
+	t_stack	*tmp_a;
+
+	if (!(*b) || !b)
+		return ;
+	tmp_b = *b;
+	tmp_a = *a;
+	(*b) = (*b)->next;
+	(*a) = tmp_b;
+	(*a)->next = tmp_a;
+	ft_in(a);
+	ft_in(b);
+}
+
+void	push_b(t_stack **a, t_stack **b)
+{
+	t_stack	*tmp_b;
+	t_stack	*tmp_a;
+
+	if (!(*a) || !a)
+		return ;
+	tmp_b = *b;
+	tmp_a = *a;
+	(*a) = (*a)->next;
+	(*b) = tmp_a;
+	(*b)->next = tmp_b;
+	ft_in(a);
+	ft_in(b);
+}
