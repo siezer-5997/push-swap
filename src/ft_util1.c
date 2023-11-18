@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 22:25:55 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/14 23:17:43 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/18 20:23:28 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,17 @@ t_stack	*ft_last_stack(t_stack *stack)
 	if (!stack)
 		return (0);
 	while (stack->next)
+	{
+		stack = stack->next;
+	}
+	return (stack);
+}
+
+t_stack	*ft_before_last_stack(t_stack *stack)
+{
+	if (!stack)
+		return (0);
+	while (stack->next->next)
 	{
 		stack = stack->next;
 	}

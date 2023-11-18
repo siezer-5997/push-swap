@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/18 18:09:44 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/18 20:36:54 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 	long			nbr;
 	long			index;
 	struct s_stack	*next;
-	struct s_stack	*pre;
+	struct s_stack	*previous;
 }t_stack;
 
 // Main function which is processing the recieved 
@@ -37,6 +37,7 @@ t_stack	*ft_conversion_stack(int argc, char **argv, int *index);
 // push_swap stack manupulation functions
 t_stack	*ft_new_stack(long num);
 t_stack	*ft_last_stack(t_stack *stack);
+t_stack	*ft_before_last_stack(t_stack *stack);
 void	ft_add_back(t_stack **stack, t_stack *new_node, int *index);
 int		ft_my_atoi(const char *str);
 char	**ft_split(char const *s, char c);
@@ -58,6 +59,9 @@ void	push_b(t_stack **a, t_stack **b);
 void	rt_a(t_stack **a);
 void	rt_b(t_stack **b);
 void	rt_ab(t_stack **a, t_stack **b);
+void	rrt_a(t_stack **a);
+void	rrt_b(t_stack **b);
+void	rrt_ab(t_stack **a, t_stack **b);
 
 // additional functions in utensils to deal with stacks and errors
 void	ft_error(char *str);

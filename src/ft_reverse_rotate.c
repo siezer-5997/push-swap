@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_instructions_rt.c                               :+:      :+:    :+:   */
+/*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 18:08:42 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/18 18:09:08 by sizerese         ###   ########.fr       */
+/*   Created: 2023/11/18 20:35:04 by sizerese          #+#    #+#             */
+/*   Updated: 2023/11/18 20:35:41 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rt_a(t_stack **a)
+void	rrt_a(t_stack **a)
 {
 	t_stack	*tmp;
+	t_stack	*last;
 
 	tmp = (*a);
-	(*a) = (*a)->next;
-	ft_last_stack((*a))->next = tmp;
-	tmp->next = NULL;
+	last = ft_last_stack((*a));
+	ft_before_last_stack((*a))->next = NULL;
+	(*a) = last;
+	(*a)->next = tmp;
 	ft_in(a);
 }
 
-void	rt_b(t_stack **b)
+void	rrt_b(t_stack **b)
 {
 	t_stack	*tmp;
+	t_stack	*last;
 
 	tmp = (*b);
-	(*b) = (*b)->next;
-	ft_last_stack((*b))->next = tmp;
-	tmp->next = NULL;
+	last = ft_last_stack((*b));
+	ft_before_last_stack((*b))->next = NULL;
+	(*b) = last;
+	(*b)->next = tmp;
 	ft_in(b);
 }
 
-void	rt_ab(t_stack **a, t_stack **b)
+void	rrt_ab(t_stack **a, t_stack **b)
 {
-	rt_a(a);
-	rt_b(b);
+	rrt_a(a);
+	rrt_b(b);
 }

@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/18 18:10:01 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/18 20:36:35 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	printf("first a & b:\n");
 	ft_display_stack(a);
 	ft_display_stack(b);
-	rt_ab(&a, &b);
+	rrt_ab(&a, &b);
 	printf("Next:\n");
 	ft_display_stack(a);
 	ft_display_stack(b);
