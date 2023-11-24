@@ -8,16 +8,16 @@ SRC_DIR = srcs/
 
 SRC_1 = srcs/push_swap.c \
 
-SRC_2 =	srcs/algorithm.c			\
-		srcs/ft_error.c				\
-		srcs/ft_instructions.c		\
-		srcs/ft_reverse_rotate.c	\
-		srcs/ft_rotate.c 		 	\
-		srcs/ft_split.c 		 	\
-		srcs/ft_strjoin.c 		 	\
-		srcs/ft_util1.c 		 	\
-		srcs/ft_util2.c 			\
-		srcs/ft_util3.c 			\
+SRC_2 =	srcs/parse.c			\
+		srcs/ft_error.c			\
+		srcs/ft_operations1.c	\
+		srcs/ft_operations2.c	\
+		srcs/ft_operations3.c 	\
+		srcs/ft_split.c 		\
+		srcs/ft_strjoin.c 		\
+		srcs/ft_util1.c 		\
+		srcs/ft_util2.c 		\
+		srcs/ft_util3.c 		\
 
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}

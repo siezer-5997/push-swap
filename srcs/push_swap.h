@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/24 20:07:08 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:19:08 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_stack	*ft_assign_index(t_stack *a);
 void	ft_in(t_stack **a);
 t_stack	*ft_create_sum(void);
 void	ft_display_stack(t_stack *a);
+void	ft_display_both(t_stack *a, t_stack *b);
 
 // Instructions funcitons 
 void	swap_a(t_stack **a);

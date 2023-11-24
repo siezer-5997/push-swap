@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/24 19:20:40 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:23:05 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack	*b = NULL;
+	t_stack	*b;
 	int		index;
 
 	index = 0;
+	b = NULL;
 	a = ft_conversion_stack(argc, argv, &index);
 	b = ft_create_sum();
-	printf("first a & b:\n");
-	ft_display_stack(a);
-	ft_display_stack(b);
+	printf("Before operation:\n");
+	ft_display_both(a, b);
 	swap_a(&a);
-	printf("Next:\n");
-	ft_display_stack(a);
-	ft_display_stack(b);
+	rt_a(&a);
+	printf("After operation:\n");
+	ft_display_both(a, b);
 	return (0);
 }
 

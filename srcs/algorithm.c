@@ -5,81 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 19:16:44 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/15 21:14:42 by sizerese         ###   ########.fr       */
+/*   Created: 2023/11/24 23:25:50 by sizerese          #+#    #+#             */
+/*   Updated: 2023/11/25 00:32:55 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_find_size(char **my_string)
+int	ft_is_bigger(long num, t_stack *b)
 {
-	int		i;
-	int		size;
+	int	i;
 
-	i = 0;
-	size = 0;
-	while (my_string[i] != NULL)
+	if (!b)
+		return (0);
+	while (b->next)
 	{
-		size++;
-		i++;
+		if (num > b->nbr)
+			b = b->next;
 	}
-	return (size);
+	
 }
 
-int	*ft_parse(char *str, int *size)
+t_stack	*ft_start_process(t_stack **a, t_stack **b)
 {
-	int		*nums;
-	char	**tmp;
-	int		i;
+	int	i;
 
 	i = 0;
-	tmp = ft_split(str, 32);
-	*(size) = ft_find_size(tmp);
-	nums = malloc(*(size) * sizeof(int));
-	i = 0;
-	while (i < *size)
-	{
-		nums[i] = ft_my_atoi(tmp[i]);
-		i++;
-	}
-	return (nums);
-}
-
-t_stack	*ft_add_2stack(t_stack *a, int *result, int *index, int size)
-{
-	while (size)
-	{
-		ft_add_back(&a, ft_new_stack(result[size - 1]), index);
-		size--;
-	}
-	return (a);
-}
-
-t_stack	*ft_conversion_stack(int argc, char **argv, int *index)
-{
-	t_stack	*a;
-	int		i;
-	char	*ptr;
-	int		*nums_result;
-	int		size;
-
-	i = 1;
-	size = 0;
-	a = NULL;
-	if (argc < 2)
-		return (NULL);
-	ptr = NULL;
-	if (argc >= 2)
-	{
-		while (i < argc)
-		{
-			ptr = my_ft_strjoin(ptr, argv[i++]);
-		}
-	}
-	else
-		ft_error("arguments error");
-	nums_result = ft_parse(ptr, &size);
-	a = ft_add_2stack(a, nums_result, index, size);
-	return (a);
+	// first push two numbers 
+	push_b(a, b);
+	push_b(a, b);
+	// then check the large number 
+	if (ft_is_bigger((*a)->nbr, *b))
 }

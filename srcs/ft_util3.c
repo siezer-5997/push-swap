@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:53:48 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/18 16:10:51 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:20:34 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,11 @@ void	ft_display_stack(t_stack *a)
 		tmp = tmp->next;
 	}
 	printf("\n");
+}
+
+void	ft_display_both(t_stack *a, t_stack *b)
+{
+	printf("Stacks a & b:\n");
+	ft_display_stack(a);
+	ft_display_stack(b);
 }
