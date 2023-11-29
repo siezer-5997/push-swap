@@ -6,11 +6,16 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/24 23:23:05 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/30 00:22:32 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// t_stack	*ft_process(t_stack *a, t_stack *b)
+// {
+// 	int	i;
+// }
 
 int	main(int argc, char **argv)
 {
@@ -19,10 +24,12 @@ int	main(int argc, char **argv)
 	int		index;
 
 	index = 0;
+	a = NULL; 
 	b = NULL;
 	a = ft_conversion_stack(argc, argv, &index);
 	b = ft_create_sum();
 	printf("Before operation:\n");
+	printf("size: %d\n", ft_stack_size(a));
 	ft_display_both(a, b);
 	swap_a(&a);
 	rt_a(&a);

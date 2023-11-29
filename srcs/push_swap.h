@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/24 23:19:08 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/11/30 00:20:33 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_stack	*ft_conversion_stack(int argc, char **argv, int *index);
 
 // push_swap stack manupulation functions
 t_stack	*ft_new_stack(long num);
+int	ft_stack_size(t_stack *stack);
 t_stack	*ft_last_stack(t_stack *stack);
 t_stack	*ft_before_last_stack(t_stack *stack);
 void	ft_add_back(t_stack **stack, t_stack *new_node, int *index);
