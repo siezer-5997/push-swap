@@ -6,39 +6,38 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:35:04 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/30 00:16:00 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:08:54 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void	reverse_rotate(t_stack **stack)
+{
+	t_stack	*last_node;
+
+	if (!(*stack) || !stack)
+		return ;
+	last_node = ft_last_stack(*stack);
+
+	(*stack)->previous = last_node;
+	last_node->next = *stack;
+	last_node->previous->next = NULL;
+	(*stack) = last_node;
+	last_node->previous = NULL;
+}
+
 void	rrt_a(t_stack **a)
 {
-	t_stack	*tmp;
-	t_stack	*last;
-
-	if (!(*a) || !a)
-		return ;
-	tmp = (*a);
-	last = ft_last_stack((*a));
-	ft_before_last_stack((*a))->next = NULL;
-	(*a) = last;
-	(*a)->next = tmp;
+	reverse_rotate(a);
+	write(1, "rra\n", 4);
 	ft_in(a);
 }
 
 void	rrt_b(t_stack **b)
 {
-	t_stack	*tmp;
-	t_stack	*last;
-
-	if (!(*b) || !b)
-		return ;
-	tmp = (*b);
-	last = ft_last_stack((*b));
-	ft_before_last_stack((*b))->next = NULL;
-	(*b) = last;
-	(*b)->next = tmp;
+	reverse_rotate(b);
+	write(1, "rrb\n", 4);
 	ft_in(b);
 }
 
@@ -46,4 +45,5 @@ void	rrt_ab(t_stack **a, t_stack **b)
 {
 	rrt_a(a);
 	rrt_b(b);
+	write(1, "rrr\n", 4);
 }

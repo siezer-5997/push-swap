@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:12:00 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/01 23:00:42 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:18:28 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,20 @@ static void	swap(t_stack **stack)
 void	swap_a(t_stack **a)
 {
 	swap(a);
-	write(1, "sa\n", 3);
 	ft_in(a);
+	write(1, "sa\n", 3);
 }
 
 void	swap_b(t_stack **b)
 {
 	swap(b);
-	write(1, "sa\n", 3);
 	ft_in(b);
+	write(1, "sa\n", 3);
 }
 
 void	swap_ab(t_stack **a, t_stack **b)
 {
 	swap_a(a);
 	swap_b(b);
+	write(1, "ss\n", 3);
 }

@@ -6,40 +6,43 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:08:42 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/30 00:14:53 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:20:50 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void	rotate(t_stack **stack)
+{
+	t_stack	*last_node;
+
+	if (!(*stack) || !stack)
+		return ;
+	last_node = ft_last_stack(*stack);
+	last_node->next = *stack;
+	*stack = (*stack)->next;
+	(*stack)->previous = NULL;
+	last_node->next->previous = last_node;
+	last_node->next->next = NULL;
+}
+
 void	rt_a(t_stack **a)
 {
-	t_stack	*tmp;
-
-	if (!(*a) || !a)
-		return ;
-	tmp = (*a);
-	(*a) = (*a)->next;
-	ft_last_stack((*a))->next = tmp;
-	tmp->next = NULL;
+	rotate(a);
 	ft_in(a);
+	write(1, "ra\n", 3);
 }
 
 void	rt_b(t_stack **b)
 {
-	t_stack	*tmp;
-
-	if (!(*b) || !b)
-		return ;
-	tmp = (*b);
-	(*b) = (*b)->next;
-	ft_last_stack((*b))->next = tmp;
-	tmp->next = NULL;
+	rotate(b);
 	ft_in(b);
+	write(1, "rb\n", 3);
 }
 
 void	rt_ab(t_stack **a, t_stack **b)
 {
 	rt_a(a);
 	rt_b(b);
+	write(1, "rr\n", 3);
 }

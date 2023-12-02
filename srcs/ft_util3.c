@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:53:48 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/01 21:05:42 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:36:02 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,9 @@ void	ft_display_stack(t_stack *a)
 		printf("No node");
 	while (tmp)
 	{
-		printf("Index[%ld]: %ld\n", tmp->index, tmp->nbr);
+		printf("The node value is: %ld\n"
+			"\tThe prev is %ld\n"
+			"\tThe next is %ld\n\n", tmp->nbr, tmp->previous ? tmp->previous->nbr : 0, tmp->next? tmp->next->nbr : 0);
 		tmp = tmp->next;
 	}
 	printf("\n");
@@ -83,7 +85,8 @@ void	ft_display_stack(t_stack *a)
 
 void	ft_display_both(t_stack *a, t_stack *b)
 {
-	printf("Stacks a & b:\n");
+	printf("Stacks a:\n");
 	ft_display_stack(a);
+	printf("Stacks b:\n");
 	ft_display_stack(b);
 }

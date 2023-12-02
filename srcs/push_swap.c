@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/01 23:02:21 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:34:29 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	main(int argc, char **argv)
 	printf("Size of stack a: %d\n", ft_stack_size(a));
 	printf("Before operation stack a:\n");
 	ft_display_stack(a);
-	swap_a(&a);
+	push_b(&a, &b);
+	push_b(&a, &b);
 	printf("After operation:\n");
 	ft_display_both(a, b);
 	return (0);
