@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/01 22:43:17 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:37:36 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ typedef struct s_stack
 // Main function which is processing the recieved 
 // arguments and parsing them into numbers to be added to stack a
 t_stack	*ft_conversion_stack(int argc, char **argv, int *index);
-int	check_repetition(t_stack *a, int nbr);
+int		check_repetition(t_stack *a, int nbr);
+void	ft_process(t_stack **a);
+int	ft_stack_sorted(t_stack *a);
 
 // push_swap stack manupulation functions
 t_stack	*ft_new_stack(long num);
-int	ft_stack_size(t_stack *stack);
+int		ft_stack_size(t_stack *stack);
 t_stack	*ft_last_stack(t_stack *stack);
 t_stack	*ft_before_last_stack(t_stack *stack);
 void	ft_add_back(t_stack **stack, t_stack *new_node, int *index);

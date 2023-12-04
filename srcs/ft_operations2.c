@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:35:04 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/02 19:08:54 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:57:23 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static void	reverse_rotate(t_stack **stack)
 	if (!(*stack) || !stack)
 		return ;
 	last_node = ft_last_stack(*stack);
-
 	(*stack)->previous = last_node;
 	last_node->next = *stack;
 	last_node->previous->next = NULL;

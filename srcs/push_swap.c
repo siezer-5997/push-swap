@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/02 19:34:29 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:48:46 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ int	main(int argc, char **argv)
 	a = NULL; 
 	b = NULL;
 	a = ft_conversion_stack(argc, argv, &index);
-	// b = ft_create_sum();
-	printf("Size of stack a: %d\n", ft_stack_size(a));
 	printf("Before operation stack a:\n");
 	ft_display_stack(a);
-	push_b(&a, &b);
-	push_b(&a, &b);
+	printf("size of stack: %d\n", ft_stack_size(a));
+	ft_process(&a);
 	printf("After operation:\n");
 	ft_display_both(a, b);
 	return (0);
