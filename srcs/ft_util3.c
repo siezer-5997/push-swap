@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:53:48 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/02 19:36:02 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/07 19:03:34 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,9 @@ void	ft_display_stack(t_stack *a)
 	while (tmp)
 	{
 		printf("The node value is: %ld\n"
+			"\tThe target is %ld\n"
 			"\tThe prev is %ld\n"
-			"\tThe next is %ld\n\n", tmp->nbr, tmp->previous ? tmp->previous->nbr : 0, tmp->next? tmp->next->nbr : 0);
+			"\tThe next is %ld\n\n", tmp->nbr, tmp->target_node ? tmp->target_node->nbr : 0, tmp->previous ? tmp->previous->nbr : 0, tmp->next? tmp->next->nbr : 0);
 		tmp = tmp->next;
 	}
 	printf("\n");

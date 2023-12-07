@@ -6,54 +6,48 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:25:50 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/04 19:51:47 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/07 19:19:58 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_is_highest(t_stack *a)
+void	ft_set_target(t_stack *a, t_stack *b)
 {
-	int		highest_num;
-	t_stack	*highest_node;
+	t_stack	*current_a;
+	t_stack	*target_node;
+	long	best_index;
 
-	highest_num = INT_MIN;
-	if (!a)
-		return (0);
-	while (a->next)
+	while (b)
 	{
-		if (a->nbr > highest_num)
+		best_index = LONG_MAX;
+		current_a = a;
+		while (current_a)
 		{
-			highest_num = a->nbr;
-			highest_node = a;
+			if (current_a->nbr > b->nbr && current_a->nbr < best_index)
+			{
+				best_index = current_a->index;
+				target_node = current_a;
+			}
+			current_a = current_a->next;
 		}
+		if (LONG_MAX == best_index)
+			b->target_node = find_smallest_node(a);
 		else
-			a = a->next;
+			b->target_node = target_node;
+		b = b->next;
 	}
-	return (highest_node);
-}
-
-int	ft_stack_sorted(t_stack *a)
-{
-	if (!a)
-		return (1);
-	while (a->next)
-	{
-		if (a->nbr > a->next->nbr)
-			return (0);
-		a = a->next;
-	}
-	return (1);
 }
 
 void	ft_tiny_sort(t_stack **a)
 {
 	t_stack	*highest_node;
 
-	highest_node = ft_is_highest(*a);
+	highest_node = find_highest_node(*a);
 	if (!(*a))
 		return ;
-	printf("1st nbr %ld\n", (*a)->nbr);
+	printf("highest %ld\n", highest_node->nbr);
+	printf("smallest %ld\n", (find_smallest_node(*a)->nbr));
 	if ((*a)->nbr == highest_node->nbr)
 		rt_a(a);
 	else if ((*a)->next->nbr == highest_node->nbr)
@@ -62,13 +56,36 @@ void	ft_tiny_sort(t_stack **a)
 		swap_a(a);
 }
 
-void	ft_process(t_stack **a)
+void	ft_jack_process(t_stack **a, t_stack **b)
+{
+	printf("This is the jacked function\n");
+	while (ft_stack_size(*a) > 3)
+	{
+		push_b(a, b);
+	}
+	ft_tiny_sort(a);
+	ft_set_target(*a, *b);
+}
+
+void	ft_process(t_stack **a, t_stack **b)
 {
 	int	size;
 
 	size = ft_stack_size(*a);
-	if (size == 3 && !ft_stack_sorted(*a))
+	if (size <= 0)
+		ft_error("Size is too small.\n");
+	else if ((size >= 1 && size < 3) && !ft_stack_sorted(*a))
+	{
+		if (size == 2)
+		{
+			if ((*a)->nbr > (*a)->next->nbr)
+				swap_a(a);
+		}
+	}
+	else if (size == 3 && !ft_stack_sorted(*a))
 		ft_tiny_sort(a);
+	else if (size > 3 && !ft_stack_sorted(*a))
+		ft_jack_process(a, b);
 	else
-		printf("big af!");
+		printf("Already sorted!\n\n");
 }

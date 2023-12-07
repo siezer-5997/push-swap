@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/04 19:37:36 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/07 19:10:06 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,20 @@ typedef struct s_stack
 	int				push_price;
 	int				above_median;
 	int				cheapest;
-	long			index; //current_position
+	long			index;
 	struct s_stack	*next;
 	struct s_stack	*previous;
+	struct s_stack	*target_node;
 }t_stack;
 
 // Main function which is processing the recieved 
 // arguments and parsing them into numbers to be added to stack a
 t_stack	*ft_conversion_stack(int argc, char **argv, int *index);
+void	ft_process(t_stack **a, t_stack **b);
 int		check_repetition(t_stack *a, int nbr);
-void	ft_process(t_stack **a);
-int	ft_stack_sorted(t_stack *a);
+int		ft_stack_sorted(t_stack *a);
+t_stack	*find_highest_node(t_stack *a);
+t_stack	*find_smallest_node(t_stack *stack);
 
 // push_swap stack manupulation functions
 t_stack	*ft_new_stack(long num);
