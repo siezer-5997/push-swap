@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:25:50 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/07 19:19:58 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/09 01:08:36 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ void	ft_set_target(t_stack *a, t_stack *b)
 	}
 }
 
+// void	ft_set_price(t_stack *a, t_stack *b)
+// {
+// }
+
 void	ft_tiny_sort(t_stack **a)
 {
 	t_stack	*highest_node;
@@ -63,8 +67,9 @@ void	ft_jack_process(t_stack **a, t_stack **b)
 	{
 		push_b(a, b);
 	}
-	ft_tiny_sort(a);
+	ft_tiny_sort(a); // first sort the 3 numbers in a, then we can add the rest
 	ft_set_target(*a, *b);
+	ft_set_price(*a, *b);
 }
 
 void	ft_process(t_stack **a, t_stack **b)

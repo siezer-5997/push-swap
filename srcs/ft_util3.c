@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:53:48 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/07 19:03:34 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/09 00:29:26 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,25 @@ t_stack	*ft_assign_index(t_stack *a)
 void	ft_in(t_stack **a)
 {
 	long	i;
+	int		median;
 	t_stack	*tmp;
 
 	i = 0;
+	median = 0;
+	if (ft_stack_size(*a) == 2)
+		median = 1;
+	else
+		median = (ft_stack_size(*a) / 2) + 1;
 	tmp = (*a);
 	if (!(*a) || !a)
 		return ;
 	while (*a)
 	{
 		(*a)->index = i;
+		if (i < median)
+			(*a)->above_median = 1;
+		else
+			(*a)->above_median = 0;
 		i++;
 		(*a) = (*a)->next;
 	}
@@ -76,9 +86,11 @@ void	ft_display_stack(t_stack *a)
 	while (tmp)
 	{
 		printf("The node value is: %ld\n"
+			"\tabove median: %d\n"
 			"\tThe target is %ld\n"
 			"\tThe prev is %ld\n"
-			"\tThe next is %ld\n\n", tmp->nbr, tmp->target_node ? tmp->target_node->nbr : 0, tmp->previous ? tmp->previous->nbr : 0, tmp->next? tmp->next->nbr : 0);
+			"\tThe next is %ld\n\n",
+			tmp->nbr, tmp->above_median, tmp->target_node ? tmp->target_node->nbr : 0, tmp->previous ? tmp->previous->nbr : 0, tmp->next? tmp->next->nbr : 0);
 		tmp = tmp->next;
 	}
 	printf("\n");
