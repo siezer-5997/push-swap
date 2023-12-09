@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:12:00 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/02 17:18:28 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/09 21:08:17 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,19 @@ static void	swap(t_stack **stack)
 		(*stack)->next->previous = (*stack)->previous;
 	(*stack)->next = (*stack)->previous;
 	(*stack)->previous = NULL;
-	ft_in(stack);
 }
 
 void	swap_a(t_stack **a)
 {
 	swap(a);
-	ft_in(a);
+	ft_set_index(*a);
 	write(1, "sa\n", 3);
 }
 
 void	swap_b(t_stack **b)
 {
 	swap(b);
-	ft_in(b);
+	ft_set_index(*b);
 	write(1, "sa\n", 3);
 }
 

@@ -21,6 +21,8 @@ SRC_2 =	srcs/parse.c			\
 		srcs/ft_util3.c 		\
 		srcs/create_stack.c		\
 		srcs/algorithm.c		\
+		srcs/push_swap_command.c\
+		srcs/stack_init.c		\
 
 OBJ_1 = ${SRC_1:.c=.o}
 OBJ_2 = ${SRC_2:.c=.o}

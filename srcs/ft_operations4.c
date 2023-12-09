@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 22:42:00 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/01 22:59:11 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/09 21:09:27 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ static void	push(t_stack **dest, t_stack **src)
 void	push_a(t_stack **a, t_stack **b)
 {
 	push(a, b);
-	ft_in(a);
-	ft_in(b);
+	ft_set_index(*a);
+	ft_set_index(*b);
 	write(1, "pa\n", 3);
 }
 
 void	push_b(t_stack **a, t_stack **b)
 {
 	push(b, a);
-	ft_in(a);
-	ft_in(b);
+	ft_set_index(*a);
+	ft_set_index(*b);
 	write(1, "pb\n", 3);
 }

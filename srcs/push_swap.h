@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/07 19:10:06 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/09 22:18:16 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,20 @@ typedef struct s_stack
 	struct s_stack	*target_node;
 }t_stack;
 
-// Main function which is processing the recieved 
+// algorithm used to sort stack with any size into 3 size first
+// and then using another algorithm to initialize both stacks and move nodes
+void	move_nodes(t_stack **a, t_stack **b);
+void	init_nodes(t_stack *a, t_stack *b);
+
+// stack initializations and setting index of stacks 
+void	ft_set_target(t_stack *a, t_stack *b);
+void	ft_set_price(t_stack *a, t_stack *b);
+void	ft_set_cheapest(t_stack *b);
+t_stack	*ft_find_cheapest(t_stack *b);
+// Functions to receive the 
 // arguments and parsing them into numbers to be added to stack a
 t_stack	*ft_conversion_stack(int argc, char **argv, int *index);
-void	ft_process(t_stack **a, t_stack **b);
+void	ft_push_swap(t_stack **a, t_stack **b);
 int		check_repetition(t_stack *a, int nbr);
 int		ft_stack_sorted(t_stack *a);
 t_stack	*find_highest_node(t_stack *a);
@@ -57,7 +67,7 @@ char	*my_ft_strjoin(char *my_stash, char *buffer);
 
 // functions that help with index modification
 t_stack	*ft_assign_index(t_stack *a);
-void	ft_in(t_stack **a);
+void	ft_set_index(t_stack *a);
 t_stack	*ft_create_sum(void);
 void	ft_display_stack(t_stack *a);
 void	ft_display_both(t_stack *a, t_stack *b);

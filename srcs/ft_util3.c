@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:53:48 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/09 00:29:26 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/09 21:05:51 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,32 +31,29 @@ t_stack	*ft_assign_index(t_stack *a)
 	return (a);
 }
 
-void	ft_in(t_stack **a)
+void	ft_set_index(t_stack *a)
 {
 	long	i;
 	int		median;
-	t_stack	*tmp;
 
 	i = 0;
 	median = 0;
-	if (ft_stack_size(*a) == 2)
+	if (!a)
+		return ;
+	if (ft_stack_size(a) == 2)
 		median = 1;
 	else
-		median = (ft_stack_size(*a) / 2) + 1;
-	tmp = (*a);
-	if (!(*a) || !a)
-		return ;
-	while (*a)
+		median = (ft_stack_size(a) / 2) + 1;
+	while (a)
 	{
-		(*a)->index = i;
-		if (i < median)
-			(*a)->above_median = 1;
+		a->index = i;
+		if (a->index < median)
+			a->above_median = 1;
 		else
-			(*a)->above_median = 0;
+			a->above_median = 0;
 		i++;
-		(*a) = (*a)->next;
+		a = a->next;
 	}
-	(*a) = tmp;
 }
 
 t_stack	*ft_create_sum(void)

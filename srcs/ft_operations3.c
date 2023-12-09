@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:08:42 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/02 17:20:50 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/09 21:09:03 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ static void	rotate(t_stack **stack)
 void	rt_a(t_stack **a)
 {
 	rotate(a);
-	ft_in(a);
+	ft_set_index(*a);
 	write(1, "ra\n", 3);
 }
 
 void	rt_b(t_stack **b)
 {
 	rotate(b);
-	ft_in(b);
+	ft_set_index(*b);
 	write(1, "rb\n", 3);
 }
 
