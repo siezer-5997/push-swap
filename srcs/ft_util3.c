@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:53:48 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/09 21:05:51 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:14:37 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ void	ft_set_index(t_stack *a)
 	median = 0;
 	if (!a)
 		return ;
-	if (ft_stack_size(a) == 2)
-		median = 1;
-	else
-		median = (ft_stack_size(a) / 2) + 1;
+	// if (ft_stack_size(a) == 2)
+	// 	median = 1;
+	// else
+	// 	median = (ft_stack_size(a) / 2) + 1;
+	median = (ft_stack_size(a) / 2);
 	while (a)
 	{
 		a->index = i;

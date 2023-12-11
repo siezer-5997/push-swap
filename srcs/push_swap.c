@@ -6,16 +6,27 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/09 18:41:04 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:36:06 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// t_stack	*ft_process(t_stack *a, t_stack *b)
-// {
-// 	int	i;
-// }
+void	ft_show_stack(t_stack *a)
+{
+	t_stack	*tmp;
+
+	tmp = a;
+	if (!tmp)
+		return ;
+	printf("-----------------Stack A-----------------\n");
+	while (tmp)
+	{
+		printf("%ld\n", tmp->nbr);
+		tmp = tmp->next;
+	}
+	printf("-----------------End Stack A-----------------\n");
+}
 
 int	main(int argc, char **argv)
 {
@@ -27,12 +38,14 @@ int	main(int argc, char **argv)
 	a = NULL; 
 	b = NULL;
 	a = ft_conversion_stack(argc, argv, &index);
-	printf("Before operation stack a:\n");
-	ft_display_stack(a);
-	printf("size of stack: %d\n", ft_stack_size(a));
+	// printf("not workk:\n");
+	// printf("Before operation stack a:\n");
+	// ft_display_stack(a);
+	// printf("size of stack: %d\n", ft_stack_size(a));
 	ft_push_swap(&a, &b);
-	printf("After operation:\n");
-	ft_display_both(a, b);
+	// ft_show_stack(a);
+	// printf("After operation:\n");
+	// ft_display_both(a, b);
 	return (0);
 }
 

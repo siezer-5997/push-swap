@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 22:04:07 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/09 22:04:33 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:23:24 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	ft_set_target(t_stack *a, t_stack *b)
 		current_a = a;
 		while (current_a)
 		{
-			if (current_a->nbr > b->nbr && current_a->index < best_index)
+			if (current_a->nbr > b->nbr && current_a->nbr < best_index)
 			{
-				best_index = current_a->index;
+				best_index = current_a->nbr;
 				target_node = current_a;
 			}
 			current_a = current_a->next;

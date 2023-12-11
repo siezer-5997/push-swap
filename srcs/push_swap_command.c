@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:18:38 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/09 22:00:09 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/11 17:49:10 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ void	ft_finalize_rotate(t_stack **stack, t_stack *cheapest_node, char who)
 		if (cheapest_node->target_node->above_median)
 		{
 			while (*stack != cheapest_node->target_node)
-				rt_b(stack);
+				rt_a(stack);
 		}
 		else
 			while (*stack != cheapest_node->target_node)
-				rrt_b(stack);
+				rrt_a(stack);
 	}
 }
 

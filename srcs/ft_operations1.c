@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:12:00 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/09 21:08:17 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/11 18:00:28 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 static void	swap(t_stack **stack)
 {
 	if (!(*stack) || !stack)
+		return ;
+	if (!(*stack)->next)
 		return ;
 	*stack = (*stack)->next;
 	(*stack)->previous->previous = *stack;
