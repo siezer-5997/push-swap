@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:18:38 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/11 17:49:10 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/11 20:06:15 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	rotate_same(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
-	printf("cheapest node: %ld\n", cheapest_node->nbr);
-	printf("top in b: %ld\n", cheapest_node->nbr);
 	while (*a != cheapest_node->target_node && *b != cheapest_node)
-	{	printf("inside while to rt_ab");
+	{
 		rt_ab(a, b);
 	}
 	ft_set_index(*a);
@@ -63,7 +61,6 @@ void	move_nodes(t_stack **a, t_stack **b)
 	t_stack	*cheapest_node;
 
 	cheapest_node = ft_find_cheapest(*b);
-	printf("is cheapest above median? %d\n", cheapest_node->above_median);
 	if (cheapest_node->above_median 
 		&& cheapest_node->target_node->above_median)
 		rotate_same(a, b, cheapest_node);
