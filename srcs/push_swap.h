@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/09 22:18:16 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/14 16:30:36 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ void	rrt_ab(t_stack **a, t_stack **b);
 
 // additional functions in utensils to deal with stacks and errors
 void	ft_error(char *str);
+void	ft_free_it(char **str);
+void	ft_free_nodes(t_stack **stack);
 int		ft_isdigit(int c);
 
 #endif

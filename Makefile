@@ -1,7 +1,7 @@
 NAME = push_swap
 CC = cc
 RM = rm -f
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 LIBFTDIR= Libft/
 OBJ_DIR = obj/
 SRC_DIR = srcs/

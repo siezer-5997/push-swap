@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:16:44 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/11 18:55:12 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/15 20:53:20 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,14 @@ int	*ft_parse(char *str, int *size)
 	i = 0;
 	while (i < *size)
 	{
+		if (!ft_strncmp(tmp[i], "0", 1))
+			nums[i] = ft_my_atoi(tmp[i]);
+		else if (ft_my_atoi(tmp[i]) == 0)
+			return (ft_free_it(tmp), free(nums), NULL);
 		nums[i] = ft_my_atoi(tmp[i]);
 		i++;
 	}
+	ft_free_it(tmp);
 	return (nums);
 }
 
@@ -54,7 +59,11 @@ void	ft_add_2stack(t_stack **a, int *result, int *index, int size)
 	while (i < size)
 	{
 		if (check_repetition(*a, result[i]))
-			ft_error("repetition");
+		{
+			ft_free_nodes(a);
+			ft_putendl_fd("Error", 2);
+			return ;
+		}
 		ft_add_back(a, ft_new_stack(result[i++]), index);
 	}
 }
@@ -70,10 +79,13 @@ t_stack	*ft_conversion_stack(int argc, char **argv, int *index)
 	i = 1;
 	size = 0;
 	a = NULL;
-	if (argc < 2 || (argc == 2 && !argv[1][0]))
-		ft_error("Empty arguments or NULL");
 	ptr = NULL;
-	if (argc >= 2)
+	if (argc < 2 || (argc == 2 && !argv[1][0]))
+	{
+		ft_putendl_fd("Error", 2);
+		return (NULL);
+	}
+	else if (argc >= 2)
 	{
 		while (i < argc)
 		{
@@ -81,8 +93,13 @@ t_stack	*ft_conversion_stack(int argc, char **argv, int *index)
 		}
 	}
 	else
-		ft_error("arguments error");
+		ft_error("Error\n");
 	nums_result = ft_parse(ptr, &size);
-	ft_add_2stack(&a, nums_result, index, size);
+	free(ptr);
+	if (nums_result)
+		ft_add_2stack(&a, nums_result, index, size);
+	if (nums_result == NULL)
+		ft_putendl_fd("Error, wrong input values for integers!", 2);
+	free(nums_result);
 	return (a);
 }

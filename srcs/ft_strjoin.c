@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_util3.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 20:29:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/11/10 20:32:30 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:20:50 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	*my_ft_strjoin(char *my_stash, char *buffer)
 	j = 0;
 	i = 0;
 	result = ft_calloc1(ft_strlen(my_stash) + 
-			ft_strlen(buffer) + 1, sizeof(char));
+			ft_strlen(buffer) + 2, sizeof(char));
 	if (!result)
 		return (free(my_stash), NULL);
 	while (my_stash[i])

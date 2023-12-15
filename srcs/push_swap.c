@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/11 19:36:06 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:03:29 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 	// ft_show_stack(a);
 	// printf("After operation:\n");
 	// ft_display_both(a, b);
+	ft_free_nodes(&a);
 	return (0);
 }
 
