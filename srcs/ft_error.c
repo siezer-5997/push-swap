@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:59:11 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/14 17:14:40 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/16 21:18:57 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,22 @@ void	ft_free_nodes(t_stack **stack)
 		free(*stack);
 		*stack = tmp;
 	}
+}
+
+int	ft_check_for_space_ol(char **str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j] == 32)
+			j++;
+		if (str[i][j] == '\0')
+			return (1);
+		i++;
+	}
+	return (0);
 }

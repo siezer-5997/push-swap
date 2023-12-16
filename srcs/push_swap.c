@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 21:30:18 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/14 17:03:29 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/16 21:13:59 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(int argc, char **argv)
 	index = 0;
 	a = NULL; 
 	b = NULL;
+	if (ft_check_for_space_ol(argv))
+		return (ft_putendl_fd("Error", 2), 0);
 	a = ft_conversion_stack(argc, argv, &index);
 	// printf("not workk:\n");
 	// printf("Before operation stack a:\n");

@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 19:43:43 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/14 16:30:36 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/16 21:14:19 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	rrt_ab(t_stack **a, t_stack **b);
 void	ft_error(char *str);
 void	ft_free_it(char **str);
 void	ft_free_nodes(t_stack **stack);
+int		ft_check_for_space_ol(char **str);
 int		ft_isdigit(int c);
 
 #endif

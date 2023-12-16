@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:16:44 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/15 20:53:20 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/16 21:06:52 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,25 +81,17 @@ t_stack	*ft_conversion_stack(int argc, char **argv, int *index)
 	a = NULL;
 	ptr = NULL;
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
-	{
-		ft_putendl_fd("Error", 2);
 		return (NULL);
-	}
 	else if (argc >= 2)
-	{
 		while (i < argc)
-		{
 			ptr = my_ft_strjoin(ptr, argv[i++]);
-		}
-	}
 	else
-		ft_error("Error\n");
+		return (ft_putendl_fd("Error", 2), NULL);
 	nums_result = ft_parse(ptr, &size);
 	free(ptr);
 	if (nums_result)
 		ft_add_2stack(&a, nums_result, index, size);
 	if (nums_result == NULL)
 		ft_putendl_fd("Error, wrong input values for integers!", 2);
-	free(nums_result);
-	return (a);
+	return (free(nums_result), a);
 }
