@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 18:08:42 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/09 21:09:03 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/18 19:59:58 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void	rt_b(t_stack **b)
 
 void	rt_ab(t_stack **a, t_stack **b)
 {
-	rt_a(a);
-	rt_b(b);
+	rotate(a);
+	rotate(b);
+	ft_set_index(*a);
+	ft_set_index(*b);
 	write(1, "rr\n", 3);
 }

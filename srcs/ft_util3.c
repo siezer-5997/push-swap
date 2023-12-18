@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:53:48 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/11 19:14:37 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/18 23:47:11 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ void	ft_set_index(t_stack *a)
 	median = 0;
 	if (!a)
 		return ;
-	// if (ft_stack_size(a) == 2)
-	// 	median = 1;
-	// else
-	// 	median = (ft_stack_size(a) / 2) + 1;
-	median = (ft_stack_size(a) / 2);
+	if (ft_stack_size(a) == 2)
+		median = 1;
+	else
+		median = (ft_stack_size(a) / 2) + 1;
+	// median = (ft_stack_size(a) / 2);
+	// printf("stack sizes %d\n", ft_stack_size(a));
 	while (a)
 	{
 		a->index = i;
@@ -53,6 +54,7 @@ void	ft_set_index(t_stack *a)
 		else
 			a->above_median = 0;
 		i++;
+		a->cheapest = 0;
 		a = a->next;
 	}
 }

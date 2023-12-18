@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 23:25:50 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/15 18:19:23 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/19 00:01:13 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_stack	*ft_find_cheapest(t_stack *b)
 
 	if (!b)
 		return (NULL);
+	// printf("huh check %d\n", b->cheapest);
 	while (b)
 	{
 		if (b->cheapest)

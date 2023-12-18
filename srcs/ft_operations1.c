@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:12:00 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/11 18:00:28 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/18 19:59:08 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ void	swap_b(t_stack **b)
 {
 	swap(b);
 	ft_set_index(*b);
-	write(1, "sa\n", 3);
+	write(1, "sb\n", 3);
 }
 
 void	swap_ab(t_stack **a, t_stack **b)
 {
-	swap_a(a);
-	swap_b(b);
+	swap(a);
+	swap(b);
+	ft_set_index(*a);
+	ft_set_index(*b);
 	write(1, "ss\n", 3);
 }

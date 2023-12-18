@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 22:04:07 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/11 19:23:24 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/18 23:51:11 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ft_set_price(t_stack *a, t_stack *b)
 			b->push_price += b->target_node->index;
 		else
 			b->push_price += len_a - (b->target_node->index);
+		// printf("pushing p %d\n", b->push_price);
 		b = b->next;
 	}
 }
@@ -77,4 +78,5 @@ void	ft_set_cheapest(t_stack *b)
 		b = b->next;
 	}
 	cheap_node->cheapest = 1;
+	// printf("cheapest now %ld\n", cheap_node->nbr);
 }

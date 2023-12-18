@@ -6,7 +6,7 @@
 /*   By: sizerese <sizerese@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:18:38 by sizerese          #+#    #+#             */
-/*   Updated: 2023/12/11 20:06:15 by sizerese         ###   ########.fr       */
+/*   Updated: 2023/12/18 23:50:59 by sizerese         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	move_nodes(t_stack **a, t_stack **b)
 	t_stack	*cheapest_node;
 
 	cheapest_node = ft_find_cheapest(*b);
+	// printf("cheapest %ld\n", cheapest_node->nbr);
 	if (cheapest_node->above_median 
 		&& cheapest_node->target_node->above_median)
 		rotate_same(a, b, cheapest_node);
