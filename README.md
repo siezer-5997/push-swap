@@ -42,7 +42,7 @@ The **Push Swap** algorithm is designed to perform sorting with the least number
 ### **Steps to Compile and Run**:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/push_swap.git
+   git clone https://github.com/siezer-5997/push-swap.git
    cd push_swap
    ```
 
